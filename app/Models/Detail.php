@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Guest extends Model
+class Detail extends Model
 {
     use HasFactory;
 
-    public function posts() {
-        return $this->hasMany(Reserve::class);
+    public function reserve() {
+        return $this->belongsTo(Reserve::class);
     }
-
 }

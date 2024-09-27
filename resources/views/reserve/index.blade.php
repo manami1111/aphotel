@@ -2,12 +2,13 @@
 
 @section('body')
     <table>
-    <th>お名前</th><th>ご住所</th><th>電話番号</th>
-    @foreach($guests as $guest)
+    <th>予約ID</th><th>人数</th><th>チェックイン日付</th><th>チェックアウト日付</th>
+    @foreach($reserves as $reserve)
     <tr>
-        <td>{{$guest->name}}</th>
-        <td>{{$guest->address}}</td>
-        <td>{{$guest->tel}}</th>
+        <td>{{$reserve->reserveid}}</th>
+        <td>{{$reserve->people}}</td>
+        <td>{{$reserve->checkindate}}</th>
+        <td>{{$reserve->checkoutdate}}</td>
     </tr>
     @endforeach
     </table>

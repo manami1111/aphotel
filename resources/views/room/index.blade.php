@@ -2,12 +2,12 @@
 
 @section('body')
     <table>
-    <th>お名前</th><th>ご住所</th><th>電話番号</th>
-    @foreach($guests as $guest)
+    <th>部屋ID</th><th>部屋種別ID</th><th>部屋番号</th>
+    @foreach($rooms as $room)
     <tr>
-        <td>{{$guest->name}}</th>
-        <td>{{$guest->address}}</td>
-        <td>{{$guest->tel}}</th>
+        <td>{{$room->roomid}}</th>
+        <td>{{$room->roomkindid}}</td>
+        <td>{{$room->roomnumber}}</th>
     </tr>
     @endforeach
     </table>
