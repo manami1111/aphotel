@@ -1,5 +1,7 @@
 @extends('layouts.hotel')
 
+
+
 @section('body')
     <table>
     <th>部屋ID</th><th>部屋種別ID</th><th>部屋番号</th>
@@ -8,6 +10,7 @@
         <td>{{$room->roomid}}</th>
         <td>{{$room->roomkindid}}</td>
         <td>{{$room->roomnumber}}</th>
+            <td><img src="{{ asset($room->image_path) }}" alt="Room Image" style="width: 100px; height: auto;"></td>
     </tr>
     @endforeach
     </table>

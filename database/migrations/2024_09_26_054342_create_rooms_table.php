@@ -1,5 +1,4 @@
-<?php
-
+<?php 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,6 +14,7 @@ return new class extends Migration
             $table->string('roomid');
             $table->id('roomkindid');
             $table->string('roomnumber');
+            $table->string('image_path', 255)->nullable(); // ここで直接カラムを追加
         });
     }
 
@@ -23,6 +23,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+           // テーブルが存在する場合のみ削除
+    if (Schema::hasTable('rooms')) {
         Schema::dropIfExists('rooms');
+
     }
+}
 };

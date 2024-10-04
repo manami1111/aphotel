@@ -11,14 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roomkinds', function (Blueprint $table) {
-            $table->id('roomkindid');
-            $table->string('roomname');
-            $table->string('maxpeople');
-        });
-
         Schema::table('roomkinds', function (Blueprint $table) {
-            $table->string('image_path')->nullable(); // 画像パスのカラムを追加
+            $table->string('image_path')->nullable();
         });
     }
 
@@ -27,10 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roomkinds');
-
         Schema::table('roomkinds', function (Blueprint $table) {
-            $table->dropColumn('image_path'); // 画像パスのカラムを削除
+            $table->dropColumn('image_paath');
         });
     }
 };
