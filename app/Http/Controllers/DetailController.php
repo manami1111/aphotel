@@ -1,17 +1,19 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Detail;
-use App\Models\Reserve;
+use Illuminate\Http\Request;
 
 class DetailController extends Controller
 {
-    public function index()
+    public function showForm()
     {
-        $details = Reserve::all();
+        return view('detail.detail_form');
+    }
 
-        return view('detail.index',['details' => $details]);
+    public function search(Request $request)
+    {
+        $detail = Detail::where('detailid', $request->id)->first();
+        return view('detail.detail_result', compact('detail'));
     }
 }

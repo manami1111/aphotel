@@ -22,11 +22,17 @@ use App\Models\Roomkind;
 
 Route::get('/guest',[GuestController::class,'index']);
 Route::get('/reserve',[ReserveController::class,'index']);
-Route::get('/detail',[DetailController::class,'index']);
+Route::get('/detail',[DetailController::class,'showForm'])->name('detail.form');
+Route::post('/detail',[DetailController::class, 'search'])->name('detail.search');
 Route::get('/roomkind',[RoomkindController::class,'index']);
 Route::get('/room',[RoomController::class,'index']);
 Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
 Route::post('/post', [PostController::class, 'store'])->name('post.store');
+Route::get('/test-view', function() {
+    return view('detail_form');
+});
+
+
 
 Route::get('/', function () {
     return view('welcome');

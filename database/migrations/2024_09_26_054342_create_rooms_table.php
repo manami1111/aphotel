@@ -11,10 +11,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rooms', function (Blueprint $table) {
-            $table->string('roomid');
-            $table->id('roomkindid');
+            $table->string('room_id');
+            $table->id('roomkind_id');
             $table->string('roomnumber');
-            $table->string('image_path', 255)->nullable(); // ここで直接カラムを追加
+            $table->string('image_path', 255)->nullable(); 
         });
     }
 
@@ -23,7 +23,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-           // テーブルが存在する場合のみ削除
+
     if (Schema::hasTable('rooms')) {
         Schema::dropIfExists('rooms');
 

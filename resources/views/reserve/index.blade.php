@@ -1,6 +1,8 @@
 @extends('layouts.hotel')
 
 @section('body')
+
+<form action=""></form>
     <table>
     <th>予約ID</th><th>人数</th><th>チェックイン日付</th><th>チェックアウト日付</th>
     @foreach($reserves as $reserve)

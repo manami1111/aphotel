@@ -9,7 +9,10 @@ class RoomController extends Controller
 {
     public function index()
     {
-        $rooms = Room::all();
+        $rooms = Room::all()->map(function ($room) {
+            $room->image_path = asset('storage/' . $room->image_path); 
+            return $room;
+        });
 
         return view('room.index',['rooms' => $rooms]);
     }
